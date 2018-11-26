@@ -40,6 +40,20 @@ import { userAccountFlows } from './redux/biz/user/account-flows';
 import { userFlows } from './redux/biz/user/flows';
 // 业务管理--业务规则
 import { rulesWeight } from './redux/biz/rules/weight';
+// 客户管理--客户管理
+import { customerCustomers } from './redux/biz/customer/customers';
+// 客户管理--客户查询
+import { customerAccountQuery } from './redux/biz/customer/accountquery';
+// 客户管理--开子账号
+import { customerSubAccount } from './redux/biz/customer/subaccount';
+// 用户查询--用户库
+import { userQueryUserBase } from './redux/biz/userquery/userbase';
+// 用户查询--用户库-报告库
+import { userQueryReporyLibrary } from './redux/biz/userquery/reportlibrary';
+// 用户查询--白名单
+import { userQueryWhiteList } from './redux/biz/userquery/whitelist';
+// 用户查询--黑名单
+import { userQueryBlackList } from './redux/biz/userquery/blacklist';
 
 export default combineReducers({
   user,
@@ -75,5 +89,12 @@ export default combineReducers({
   userAccounts,
   userAccountFlows,
   userFlows,
-  rulesWeight
+  rulesWeight,
+    customerCustomers,
+    customerAccountQuery,
+    customerSubAccount,
+    userQueryUserBase,
+    userQueryReporyLibrary,
+    userQueryWhiteList,
+    userQueryBlackList
 });

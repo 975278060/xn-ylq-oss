@@ -9,7 +9,7 @@ import {
     doFetching,
     cancelFetching,
     setSearchData
-} from '@redux/biz/customer/accountquery';
+} from '@redux/biz/userquery/reportlibrary';
 import { listWrapper } from 'common/js/build-list';
 import { showWarnMsg } from 'common/js/util';
 import { activateUser } from 'api/user';
@@ -25,13 +25,13 @@ const typeDict = {
 
 @listWrapper(
     state => ({
-        ...state.customerAccountQuery,
+        ...state.userQueryReporyLibrary,
         parentCode: state.menu.subMenuCode
     }),
     { setTableData, clearSearchParam, doFetching, setBtnList,
         cancelFetching, setPagination, setSearchParam, setSearchData }
 )
-class AccountQuery extends React.Component {
+class UserBase extends React.Component {
     rockOrActive(status, code) {
         Modal.confirm({
             okText: '确认',
@@ -50,25 +50,39 @@ class AccountQuery extends React.Component {
     }
     render() {
         const fields = [{
-            title: '户名',
-            field: 'mobile',
+            title: '报告编号',
+            field: 'mobile'
+        }, {
+            title: '报告主人',
+            field: 'loginName',
             search: true
         }, {
-            title: '账户余额',
-            field: 'userReferee'
+            title: '手机号',
+            field: 'userRefree',
+            type: 'select'
         }, {
-            title: '冻结金额',
-            field: 'nickname'
-        }, {
-            title: '创建时间',
+            title: '所属业务员',
             field: 'createDatetime',
+            type: 'datetime',
+            search: true
+        }, {
+            title: '类型',
+            field: 'dateStart',
             type: 'datetime'
         }, {
-            title: '状态',
-            field: 'status'
+            title: '报告规格',
+            field: 'remark',
+            search: true
         }, {
-            title: '备注',
-                field: 'remark'
+            title: '综合报告分',
+            field: 'remark'
+        }, {
+            title: '完整度',
+            field: 'remark'
+        }, {
+            title: '填写时间',
+            field: 'createDatetime',
+            type: 'datetime'
         }];
         return this.props.buildList({
             fields,
@@ -124,4 +138,4 @@ class AccountQuery extends React.Component {
     }
 }
 
-export default AccountQuery;
+export default UserBase;

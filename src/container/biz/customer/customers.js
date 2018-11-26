@@ -25,7 +25,7 @@ const typeDict = {
 
 @listWrapper(
     state => ({
-        ...state.userUsers,
+        ...state.customerCustomers,
         parentCode: state.menu.subMenuCode
     }),
     { setTableData, clearSearchParam, doFetching, setBtnList,
@@ -36,7 +36,7 @@ class Customers extends React.Component {
         Modal.confirm({
             okText: '确认',
             cancelText: '取消',
-            content: `确认${status === '0' ? '注销' : '激活'}用户？`,
+            content: `确认${status === '0' ? '禁止登录' : '恢复登录'}用户？`,
             onOk: () => {
                 this.props.doFetching();
                 return activateUser(code).then(() => {
@@ -54,18 +54,20 @@ class Customers extends React.Component {
             field: 'mobile'
         }, {
             title: '昵称',
-            field: 'loginName'
+            field: 'roleCode '
         }, {
             title: '推荐人',
-            field: 'userRefree',
+            field: 'orderDir '
+        }, {
+            title: '累计消费',
+            field: 'updater',
             search: true
         }, {
             title: '账户余额',
-            field: 'createDatetime',
-            type: 'datetime'
+            field: 'xx'
         }, {
             title: '注册时间',
-            field: 'dateStart',
+            field: 'createDatetime',
             type: 'datetime'
         }, {
             title: '状态',
@@ -77,17 +79,23 @@ class Customers extends React.Component {
         return this.props.buildList({
             fields,
             rowKey: 'userId',
-            pageCode: 805120,
+            pageCode: 630115,
+            searchParams: {
+                companyCode: ''
+            },
             btnEvent: {
-                // 账户查询
-                accounts: (keys, items) => {
-                    if (!keys || !keys.length) {
-                        showWarnMsg('请选择记录');
-                    } else if (keys.length > 1) {
-                        showWarnMsg('请选择一条记录');
-                    } else {
-                        this.props.history.push(`/user/users/accounts?code=${keys[0]}`);
-                    }
+                // 添加备注
+                addRemark: (keys, items) => {
+                    // if (!keys || !keys.length) {
+                    //     showWarnMsg('请选择记录');
+                    // } else if (keys.length > 1) {
+                    //     showWarnMsg('请选择一条记录');
+                    // } else {
+                        this.props.history.push(`/customer/customers/addedit?code=${keys[0]}`);
+                    // }
+                },
+                detail: (keys, items) => {
+                    this.props.history.push(`/customer/customers/detail?code=${keys[0]}`);
                 },
                 // 激活
                 active: (keys, items) => {
@@ -108,7 +116,7 @@ class Customers extends React.Component {
                     } else if (keys.length > 1) {
                         showWarnMsg('请选择一条记录');
                     } else if (items[0].status !== '0') {
-                        showWarnMsg('该用户已被注销');
+                        showWarnMsg('该用户已被禁止登录');
                     } else {
                         this.rockOrActive(items[0].status, keys[0]);
                     }

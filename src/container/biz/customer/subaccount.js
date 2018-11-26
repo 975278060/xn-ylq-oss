@@ -25,7 +25,7 @@ const typeDict = {
 
 @listWrapper(
     state => ({
-        ...state.userUsers,
+        ...state.customerSubAccount,
         parentCode: state.menu.subMenuCode
     }),
     { setTableData, clearSearchParam, doFetching, setBtnList,

@@ -9,7 +9,7 @@ import {
     doFetching,
     cancelFetching,
     setSearchData
-} from '@redux/biz/customer/accountquery';
+} from '@redux/biz/userquery/userbase';
 import { listWrapper } from 'common/js/build-list';
 import { showWarnMsg } from 'common/js/util';
 import { activateUser } from 'api/user';
@@ -25,13 +25,13 @@ const typeDict = {
 
 @listWrapper(
     state => ({
-        ...state.customerAccountQuery,
+        ...state.userQueryUserBase,
         parentCode: state.menu.subMenuCode
     }),
     { setTableData, clearSearchParam, doFetching, setBtnList,
         cancelFetching, setPagination, setSearchParam, setSearchData }
 )
-class AccountQuery extends React.Component {
+class UserBase extends React.Component {
     rockOrActive(status, code) {
         Modal.confirm({
             okText: '确认',
@@ -50,25 +50,28 @@ class AccountQuery extends React.Component {
     }
     render() {
         const fields = [{
-            title: '户名',
+            title: '手机号',
             field: 'mobile',
             search: true
         }, {
-            title: '账户余额',
-            field: 'userReferee'
+            title: '推荐人',
+            field: 'loginName'
         }, {
-            title: '冻结金额',
-            field: 'nickname'
+            title: '所属客户',
+            field: 'userRefree',
+            type: 'select',
+            search: true
         }, {
-            title: '创建时间',
+            title: '注册时间',
             field: 'createDatetime',
             type: 'datetime'
         }, {
             title: '状态',
-            field: 'status'
+            field: 'dateStart',
+            type: 'datetime'
         }, {
             title: '备注',
-                field: 'remark'
+            field: 'remark'
         }];
         return this.props.buildList({
             fields,
@@ -124,4 +127,4 @@ class AccountQuery extends React.Component {
     }
 }
 
-export default AccountQuery;
+export default UserBase;

@@ -187,8 +187,7 @@ const ROUTES = [
   },
   // 业务管理 -- 用户管理 -- 会员查询 -- 详情
   {
-    path: '/user/users/addedit',
-    component: asyncComponent(() => import('container/biz/user/users/users-addedit'))
+    path: '/user/users/addedit', component: asyncComponent(() => import('container/biz/user/users/users-addedit'))
   },
   // 业务管理 -- 用户管理 -- 会员查询 -- 账户查询
   {
@@ -196,13 +195,11 @@ const ROUTES = [
   },
   // 业务管理 -- 用户管理 -- 签到记录
   {
-    path: '/user/users/signIn',
-    component: asyncComponent(() => import('container/biz/user/users/user-signIn'))
+    path: '/user/users/signIn', component: asyncComponent(() => import('container/biz/user/users/user-signIn'))
   },
   // 业务管理 -- 用户管理 -- 分享记录
   {
-    path: '/user/shares',
-    component: asyncComponent(() => import('container/biz/user/shares/shares'))
+    path: '/user/shares', component: asyncComponent(() => import('container/biz/user/shares/shares'))
   },
   // 业务管理 -- 用户管理 -- 碳泡泡赠送记录
   {
@@ -226,8 +223,7 @@ const ROUTES = [
   },
   // 业务管理 -- 用户管理 -- 流水查询 -- 详情
   {
-    path: '/user/flows/addedit',
-    component: asyncComponent(() => import('container/finance/flows-addedit/flows-addedit'))
+    path: '/user/flows/addedit', component: asyncComponent(() => import('container/finance/flows-addedit/flows-addedit'))
   },
   // 业务管理 -- 业务规则 -- 好友排行权重设置
   {
@@ -241,6 +237,13 @@ const ROUTES = [
     {
         path: '/customer/customers', component: asyncComponent(() => import('container/biz/customer/customers'))
     },
+    // 客户管理-新增备注
+    {
+        path: '/customer/customers/addedit', component: asyncComponent(() => import('container/biz/customer/customer-addedit'))
+    }, // 客户管理-账户余额
+    {
+        path: '/customer/customers/detail', component: asyncComponent(() => import('container/biz/customer/customer-detail'))
+    },
     // 业务管理--客户管理--开子账号
     {
         path: '/customer/subaccount', component: asyncComponent(() => import('container/biz/customer/subaccount'))
@@ -248,6 +251,22 @@ const ROUTES = [
     // 业务管理--客户管理--账户查询
     {
         path: '/customer/accountquery', component: asyncComponent(() => import('container/biz/customer/accountquery'))
+    },
+    // 业务管理--用户查询--用户库
+    {
+        path: '/userquery/userbase', component: asyncComponent(() => import('container/biz/userquery/userbase'))
+    },
+    // 业务管理--用户查询--报告库
+    {
+        path: '/userquery/reportlibrary', component: asyncComponent(() => import('container/biz/userquery/reportlibrary'))
+    },
+    // 业务管理--用户查询--白名单
+    {
+        path: '/userquery/whitelist', component: asyncComponent(() => import('container/biz/userquery/whitelist'))
+    },
+    // 业务管理--用户查询--黑名单
+    {
+        path: '/userquery/blacklist', component: asyncComponent(() => import('container/biz/userquery/blacklist'))
     }
 ];
 

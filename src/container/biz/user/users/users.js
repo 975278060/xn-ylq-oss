@@ -66,10 +66,7 @@ class Users extends React.Component {
       field: 'nickname'
     }, {
       title: '状态',
-      field: 'status',
-      type: 'select',
-      key: 'user_status',
-      search: true
+      field: 'status'
     }, {
       title: '注册时间',
       field: 'createDatetime',

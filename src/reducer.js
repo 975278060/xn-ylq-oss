@@ -42,19 +42,31 @@ import { userFlows } from './redux/biz/user/flows';
 import { rulesWeight } from './redux/biz/rules/weight';
 // 客户管理--客户管理
 import { customerCustomers } from './redux/biz/customer/customers';
+// 客户管理--客户管理-报告列表
+import { customerReportLibrary } from './redux/biz/customer/reportlist/reportlibrary';
 // 客户管理--客户查询
 import { customerAccountQuery } from './redux/biz/customer/accountquery';
 // 客户管理--开子账号
 import { customerSubAccount } from './redux/biz/customer/subaccount';
 // 用户查询--用户库
 import { userQueryUserBase } from './redux/biz/userquery/userbase';
+// 用户查询--用户库--添加备注
+import { userQueryAddEdit } from './redux/biz/userquery/userqueryAddedit';
 // 用户查询--用户库-报告库
 import { userQueryReporyLibrary } from './redux/biz/userquery/reportlibrary';
 // 用户查询--白名单
 import { userQueryWhiteList } from './redux/biz/userquery/whitelist';
 // 用户查询--黑名单
 import { userQueryBlackList } from './redux/biz/userquery/blacklist';
-
+// 系统参数管理--七牛云图片管理
+import { publicBuyAds } from './redux/public/buyADS';
+import { publicBuyAdsAddEdit } from './redux/public/buyADS-addedit';
+// 系统参数管理--安卓管理
+import { generalAndPublish } from './redux/general/andpublish';
+import { generalAndPublishAddEdit } from './redux/general/andpublish-addedit';
+// 系统参数管理--苹果管理
+import { generalIosPublish } from './redux/general/iospublish';
+import { generalIosPublishAddEdit } from './redux/general/iospublish-addedit';
 export default combineReducers({
   user,
   menu,
@@ -93,8 +105,16 @@ export default combineReducers({
     customerCustomers,
     customerAccountQuery,
     customerSubAccount,
+    customerReportLibrary,
     userQueryUserBase,
     userQueryReporyLibrary,
     userQueryWhiteList,
-    userQueryBlackList
+    userQueryBlackList,
+    userQueryAddEdit,
+    publicBuyAds,
+    publicBuyAdsAddEdit,
+    generalAndPublish,
+    generalAndPublishAddEdit,
+    generalIosPublish,
+    generalIosPublishAddEdit
 });

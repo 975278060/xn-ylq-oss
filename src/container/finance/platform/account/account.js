@@ -96,87 +96,21 @@ class Account extends React.Component {
         <Spin spinning={this.props.fetching}>
           <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
             <Col span={8} style={{marginBottom: '20px'}}>
-              <Card title="支付宝账户" extra={
+              <Card title="同盾账户" extra={
                 <Button onClick={() => this.goFlow(aliAccount.accountNumber)} type="primary">资金流水</Button>
               }>¥{moneyFormat(aliAccount.amount || 0)}
-                <Button
-                  style={{float: 'right'}}
-                  onClick={() => this.goWithdraw(aliAccount.accountNumber)} type="primary">提现回录</Button>
               </Card>
             </Col>
             <Col span={8} style={{marginBottom: '20px'}}>
-              <Card title="微信账户" extra={
+              <Card title="客户账户" extra={
                 <Button onClick={() => this.goFlow(wxAccount.accountNumber)} type="primary">资金流水</Button>
               }>¥{moneyFormat(wxAccount.amount || 0)}
-                <Button
-                  style={{float: 'right'}}
-                  onClick={() => this.goWithdraw(wxAccount.accountNumber)} type="primary">提现回录</Button>
               </Card>
             </Col>
             <Col span={8} style={{marginBottom: '20px'}}>
-              <Card title="线下账户" extra={
+              <Card title="盈亏账户" extra={
                 <Button onClick={() => this.goFlow(offAccount.accountNumber)} type="primary">资金流水</Button>
               }>¥{moneyFormat(offAccount.amount || 0)}</Card>
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 6, sm: 12, md: 24, lg: 32 }}>
-            <Col span={6} style={{marginBottom: '20px'}}>
-              <Card title="分销商总余额" extra={
-                <Button onClick={() => this.goAccounts(aClientAccount.type)} type="primary">资金分布</Button>
-              }>¥{moneyFormat(aClientAccount.amount || 0)}</Card>
-            </Col>
-            <Col span={6} style={{marginBottom: '20px'}}>
-              <Card title="产权方总余额" extra={
-                <Button onClick={() => this.goAccounts(oClientAccount.type)} type="primary">资金分布</Button>
-              }>¥{moneyFormat(oClientAccount.amount || 0)}</Card>
-            </Col>
-            <Col span={6} style={{marginBottom: '20px'}}>
-              <Card title="养护方总余额" extra={
-                <Button onClick={() => this.goAccounts(mClientAccount.type)} type="primary">资金分布</Button>
-              }>¥{moneyFormat(mClientAccount.amount || 0)}</Card>
-            </Col>
-            <Col span={6} style={{marginBottom: '20px'}}>
-              <Card title="商家总余额" extra={
-                <Button onClick={() => this.goAccounts(bClientAccount.type)} type="primary">资金分布</Button>
-              }>¥{moneyFormat(bClientAccount.amount || 0)}</Card>
-            </Col>
-            <Col span={6} style={{marginBottom: '20px'}}>
-              <Card title="用户总余额" extra={
-                <Button onClick={() => this.goAccounts(cClientAccount.type)} type="primary">资金分布</Button>
-              }>¥{moneyFormat(cClientAccount.amount || 0)}</Card>
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-            <Col span={8} style={{marginBottom: '20px'}}>
-              <Card title="平台余额" extra={
-                <Button onClick={() => this.goFlow(cnyAccount.accountNumber)} type="primary">资金流水</Button>
-              }>¥{moneyFormat(cnyAccount.amount || 0)}</Card>
-            </Col>
-          </Row>
-          <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-            <Col span={8} style={{marginBottom: '20px'}}>
-              <Card title="积分池">
-                <p>总额：¥{moneyFormat(jfAccount.totalAmount || 0)}</p>
-                <p>余额：¥{moneyFormat(jfAccount.amount || 0)}</p>
-                <p>历史总发放额：¥{moneyFormat(jfAccount.historyOutAmount || 0)}</p>
-                <p>历史总回收额：¥{moneyFormat(jfAccount.historyInAmount || 0)}</p>
-                <div style={{textAlign: 'center'}}>
-                  <Button onClick={() => this.goAdd(jfAccount.currency)} type="primary">手动增发</Button>
-                  <Button style={{marginLeft: 20}} onClick={() => this.goFlow(jfAccount.accountNumber)} type="primary">资金流水</Button>
-                </div>
-              </Card>
-            </Col>
-            <Col span={8} style={{marginBottom: '20px'}}>
-              <Card title="碳泡泡池">
-                <p>总额：¥{moneyFormat(tppAccount.totalAmount || 0)}</p>
-                <p>余额：¥{moneyFormat(tppAccount.amount || 0)}</p>
-                <p>历史总发放额：¥{moneyFormat(tppAccount.historyOutAmount || 0)}</p>
-                <p>历史总回收额：¥{moneyFormat(tppAccount.historyInAmount || 0)}</p>
-                <div style={{textAlign: 'center'}}>
-                  <Button onClick={() => this.goAdd(tppAccount.currency)} type="primary">手动增发</Button>
-                  <Button style={{marginLeft: 20}} onClick={() => this.goFlow(tppAccount.accountNumber)} type="primary">资金流水</Button>
-                </div>
-              </Card>
             </Col>
           </Row>
         </Spin>

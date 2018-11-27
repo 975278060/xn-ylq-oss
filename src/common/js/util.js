@@ -59,7 +59,9 @@ export function getUserType() {
 export function getUserKind() {
   return cookies.get('kind');
 }
-
+export function getwhite(isWhitelistQUERY) {
+    return cookies.get('isWhitelistQUERY');
+}
 /**
  * 通过正则表达式获取URL传递参数
  * @param name

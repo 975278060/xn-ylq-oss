@@ -13,11 +13,23 @@ export function setRoleMenus(menuCodeList, roleCode) {
 export function activateSysUser(userId) {
   return fetch(630056, { userId, updater: getUserId() });
 }
-// 注销激活c端用户
+// 注销激活普通用户
 export function activateUser(userId) {
   return fetch(805084, { userId, updater: getUserId() });
 }
+// 注销借款商用户
+export function activateJUser(userId) {
+    return fetch(630106, { userId, updater: getUserId() });
+}
+// 获取白名单
+export function addwhite(userId) {
+    return fetch(805151, { userId, updater: getUserId() });
+}
+// 获取黑名单
 
+export function addblack(userId) {
+    return fetch(805150, { userId, updater: getUserId() });
+}
 // 获取用户详情
 export function getUser() {
   return getUserById(getUserId());
@@ -25,7 +37,7 @@ export function getUser() {
 
 // 获取用户详情
 export function getUserById(userId) {
-  return fetch(630067, { userId });
+  return fetch(805121, { userId });
 }
 
 // 为用户设置岗位

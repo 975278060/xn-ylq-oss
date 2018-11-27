@@ -28,7 +28,7 @@ class BizSellerOrderSingle extends React.Component {
     this.code = getQueryString('code', this.props.location.search);
   }
   componentDidMount() {
-    fetch(630067, {
+    fetch(805121, {
       userId: getUserId()
     }).then((data) => {
       this.shopCode = data.companyCode;

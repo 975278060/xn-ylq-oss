@@ -21,63 +21,44 @@ import { dateTimeFormat } from 'common/js/util';
     cancelFetching, setPagination, setSearchParam, setSearchData }
 )
 class PlatformFlows extends React.Component {
-  render() {
-    const fields = [{
-      title: '户名',
-      field: 'relaNameForQuery',
-      render: (v, d) => d.realName,
-      search: true
-    }, {
-      title: '币种',
-      field: 'currency',
-      type: 'select',
-      key: 'currency'
-    }, {
-      title: '渠道',
-      field: 'channelType',
-      type: 'select',
-      key: 'channel_type',
-      search: true
-    }, {
-      title: '业务类型',
-      field: 'bizType',
-      type: 'select',
-      key: 'biz_type',
-      search: true
-    }, {
-      title: '变动金额',
-      field: 'transAmountString',
-      amount: true
-    }, {
-      title: '变动前金额',
-      field: 'preAmountString',
-      amount: true
-    }, {
-      title: '变动后金额',
-      field: 'postAmountString',
-      amount: true
-    }, {
-      title: '状态',
-      field: 'status',
-      type: 'select',
-      key: 'jour_status',
-      search: true
-    }, {
-      title: '创建时间',
-      field: 'createDatetime',
-      type: 'date',
-      rangedate: ['createDatetimeStart', 'createDatetimeEnd'],
-      render: dateTimeFormat,
-      search: true
-    }];
-    return this.props.buildList({
-      fields,
-      pageCode: 802320,
-      searchParams: {
-        accountType: 'P'
-      }
-    });
-  }
+    render() {
+        const fields = [{
+            title: '业务类型',
+            field: 'bizType',
+            type: 'select',
+            key: 'biz_type',
+            search: true
+        }, {
+            title: '变动金额',
+            field: 'transAmountString',
+            amount: true
+        }, {
+            title: '变动前金额',
+            field: 'preAmount',
+            amount: true
+        }, {
+            title: '变动后金额',
+            field: 'transAmount',
+            amount: true
+        }, {
+            title: '变动时间',
+            field: 'createDatetime',
+            type: 'date'
+        }, {
+            title: '状态',
+            field: 'status',
+            key: 'user_status'
+        }, {
+            title: '备注',
+            field: 'remark'
+        }];
+        return this.props.buildList({
+            fields,
+            pageCode: 802320,
+            searchParams: {
+            }
+        });
+    }
 }
 
 export default PlatformFlows;

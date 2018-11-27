@@ -29,9 +29,9 @@ class RoleAddEdit extends DetailUtil {
       fields,
       code: this.code,
       view: this.view,
-      detailCode: 630006,
-      addCode: 630000,
-      editCode: 630002
+      detailCode: 805022,
+      addCode: 805023,
+      editCode: 805025
     });
   }
 }

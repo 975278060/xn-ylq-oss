@@ -235,38 +235,77 @@ const ROUTES = [
   },
     // 业务管理--客户管理--客户管理
     {
-        path: '/customer/customers', component: asyncComponent(() => import('container/biz/customer/customers'))
+        path: '/customer/customers', component: asyncComponent(() => import('container/biz/customer/customers/customers'))
+    },
+    // 业务管理--客户管理--报告列表
+    {
+        path: '/customer/customers/reportlist/reportlibrary', component: asyncComponent(() => import('container/biz/customer/reportlist/reportlibrary'))
     },
     // 客户管理-新增备注
     {
-        path: '/customer/customers/addedit', component: asyncComponent(() => import('container/biz/customer/customer-addedit'))
+        path: '/customer/customers/addedit', component: asyncComponent(() => import('container/biz/customer/customer-addedit/customer-addedit'))
     }, // 客户管理-账户余额
     {
-        path: '/customer/customers/detail', component: asyncComponent(() => import('container/biz/customer/customer-detail'))
+        path: '/customer/customers/detail', component: asyncComponent(() => import('container/biz/customer/customer-detail/customer-detail'))
     },
     // 业务管理--客户管理--开子账号
     {
-        path: '/customer/subaccount', component: asyncComponent(() => import('container/biz/customer/subaccount'))
+        path: '/customer/subaccount', component: asyncComponent(() => import('container/biz/customer/subaccount/subaccount'))
     },
     // 业务管理--客户管理--账户查询
     {
-        path: '/customer/accountquery', component: asyncComponent(() => import('container/biz/customer/accountquery'))
+        path: '/customer/accountquery', component: asyncComponent(() => import('container/biz/customer/accuntquery/accountquery'))
     },
     // 业务管理--用户查询--用户库
     {
-        path: '/userquery/userbase', component: asyncComponent(() => import('container/biz/userquery/userbase'))
+        path: '/userquery/userbase', component: asyncComponent(() => import('container/biz/userquery/userbase/userbase'))
+    },
+    // 业务管理--用户查询--用户库--添加备注
+    {
+        path: '/userquery/userqueryaddedit', component: asyncComponent(() => import('container/biz/userquery/userquery-addedit/userquery-addedit'))
     },
     // 业务管理--用户查询--报告库
     {
-        path: '/userquery/reportlibrary', component: asyncComponent(() => import('container/biz/userquery/reportlibrary'))
+        path: '/userquery/reportlibrary', component: asyncComponent(() => import('container/biz/userquery/reportlibrary/reportlibrary'))
     },
     // 业务管理--用户查询--白名单
     {
-        path: '/userquery/whitelist', component: asyncComponent(() => import('container/biz/userquery/whitelist'))
+        path: '/userquery/whitelist', component: asyncComponent(() => import('container/biz/userquery/whitelist/whitelist'))
+    },
+    // 业务管理--用户查询--白名单--详情
+    {
+        path: '/userquery/whitelist/detail', component: asyncComponent(() => import('container/biz/userquery/whitelist/whitelist-detail'))
     },
     // 业务管理--用户查询--黑名单
     {
-        path: '/userquery/blacklist', component: asyncComponent(() => import('container/biz/userquery/blacklist'))
+        path: '/userquery/blacklist', component: asyncComponent(() => import('container/biz/userquery/blacklist/blacklist'))
+    },
+    // 业务管理--用户查询--黑名单
+    {
+        path: '/userquery/blacklist/detail', component: asyncComponent(() => import('container/biz/userquery/blacklist/blacklist-detail'))
+    },
+    // 业务管理--系统参数管理--七牛图片参数
+    {
+        path: '/buyads/buyads', component: asyncComponent(() => import('container/public/buyADS/buyADS'))
+    },
+    // 业务管理--系统参数管理--七牛图片参数--修改
+    {
+        path: '/buyads/buyads/addedit', component: asyncComponent(() => import('container/public/buyADS/buyADS-addedit'))
+    },
+    // 业务管理--系统参数管理--安卓参数
+    {
+        path: '/general/andpublish', component: asyncComponent(() => import('container/general/andPublish'))
+    },
+    // 业务管理--系统参数管理--安卓参数--修改
+    {
+        path: '/general/andpublish/addedit', component: asyncComponent(() => import('container/general/andPublish-addedit'))
+    }, // 业务管理--系统参数管理--苹果参数
+    {
+        path: '/general/iospublish', component: asyncComponent(() => import('container/general/iosPublish'))
+    },
+    // 业务管理--系统参数管理--苹果参数--修改
+    {
+        path: '/general/iospublish/addedit', component: asyncComponent(() => import('container/general/iosPublish-addedit'))
     }
 ];
 
